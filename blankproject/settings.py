@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # own
+    'pages',
     'products',
 ]
 
@@ -57,7 +58,8 @@ ROOT_URLCONF = 'blankproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # 'DIRS': ['/Dev/dcvirtualenv/trydjango-src/templates'], # tive que tirar o 'c' que vem quando pego o caminho pelo pwd (inicialmente fiz assim, mas, para funcionar em qualquer máquina tem que usar o BASE_DIR
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

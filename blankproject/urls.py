@@ -16,6 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from pages.views import home_view, about_view, contact_view # ele fez assim para evitar confusão, caso eu quisesse importar o views de products, por exemplo
+
 urlpatterns = [
+    path('', home_view, name='home'),
+    path('about', about_view),
+    path('contact', contact_view),
     path('admin/', admin.site.urls),
 ]

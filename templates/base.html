@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+    <head>
+        <title>DC - Try Django</title>
+    </head>
+    <body>
+    {% include 'navbar.html' %}
+    <!-- se eu tiver algo na outra página com content ele vai sobrescrever esse -->
+        {% block content %}
+            replace me
+        {% endblock %}
+    <!-- se eu não tiver nada na outra pagina com another... ele pega esse conteúdo aqui -->
+        {% block another_content_area %}
+            txu
+        {% endblock %}
+    </body>
+</html>
