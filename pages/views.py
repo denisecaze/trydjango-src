@@ -10,9 +10,11 @@ def home_view(request, *args, **kwargs): #args e kwargs são do python. Parece q
 
 def about_view(request, *args, **kwargs):
     my_context = {
+        "my_title": "here I have my title",
         "my_text": "this is about Denise",
         "my_number": 123,
-        "my_list": [456, 788, "abc"],
+        "my_list": [456, 788, 983],
+        "my_html": "<span>Hello World</span>"
     }
     # return HttpResponse("<h1>About us</h1>")
     return render(request, "about.html",  my_context)

@@ -4,7 +4,23 @@
 <h1>About</h1>
 <p>this is our template</p>
 
+<h3>{{ my_title|capfirst }}</h3>
+<p>{{ my_html|safe}}</p>
 <p>
-    {{ my_text }}, {{ my_number }}, {{ my_list}}
+    {{ my_text }}, {{ my_number }}, {{ my_list }}
 </p>
+
+<!-- renderizando os itens de um array com for loop. o counter é opcional, ffoi usado só para organizar a lista -->
+<ul>
+{% for my_sub_item in my_list %}
+    {% if my_sub_item == 456 %}
+        <li>{{ forloop.counter }} - {{ my_sub_item|add:22 }}</li>
+    {% elif my_sub_item == 983 %}
+        <li>{{ forloop.counter }} - {{ my_sub_item|add:1000 }}</li>
+    {% else %}
+        <li>{{ forloop.counter }} - {{ my_sub_item }}</li>
+    {% endif %}
+{% endfor %}
+</ul>
+
 {% endblock %}
